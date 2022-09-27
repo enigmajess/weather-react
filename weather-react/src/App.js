@@ -10,6 +10,8 @@ function App() {
       <header className="App-header">
         <h1>Weather App</h1>
        <WeatherSearch city={city} setCity={setCity}/>
+       <a href='https://github.com/enigmajess/weather-react'>Open source code</a>
+       <p> by Jessica Neumann</p>
         
       </header>
     </div>
