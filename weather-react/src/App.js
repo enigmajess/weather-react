@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Weather App</h1>
        <WeatherSearch city={city} setCity={setCity}/>
         
       </header>
