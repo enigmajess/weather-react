@@ -36,10 +36,12 @@ export default function WeatherSearch(props) {
 
     let form = (
 
-        <form onSubmit={handleSubmit}>
-            <input type="search" placeholder="Type a city..." onChange={changeCity} />
-            <button  type="submit" class="btn btn-primary btn-lg" value="submit">Search</button>
+
+        <form onSubmit={handleSubmit} className="row">
+            <input type="search" placeholder="Type a city..." onChange={changeCity} className="col-9"/>
+            <button type="submit" class="btn btn-primary col-3" value="submit" >Search</button>
         </form>
+
 
     );
 
@@ -50,21 +52,34 @@ export default function WeatherSearch(props) {
     }
 
     return (
-        <div>
+        <div className="weather">
             {form}
-            <h2>{displayCity}</h2>
-            <ul>
-                <li>Temperature: {weather.temperature}°C</li>
-                <li>Description: {weather.description}</li>
-                <li>Humidity: {weather.humidity}%</li>
-                <li>Wind: {weather.wind}km/h</li>
-                <li>
+            <div className="row">
+                <div className="col-6">
+                    <h2>{displayCity}</h2>
+                    <ul>
+                        <li>Date</li>
+                        <li>{weather.description}</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-6">
                     <img
                         src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
                         alt={`${weather.description}`}
                     />
-                </li>
-            </ul>
+                    <p>{weather.temperature}°C</p>
+                </div>
+                <div className="col-6">
+                    <ul>
+                        <li>Humidity: {weather.humidity}%</li>
+                        <li>Wind: {weather.wind}km/h</li>
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
     );
 

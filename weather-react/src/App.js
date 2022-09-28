@@ -12,16 +12,20 @@ function App() {
         <h1>Weather App</h1>
         <WeatherSearch city={city} setCity={setCity} />
 
-        <p> This project was created by Jessica Neumann and open-sourced on <span>
-          <a href='https://github.com/enigmajess/weather-react' rel="noreferrer" target="_blank">Github </a>
-        </span>
-          and hosted on
-          <span>
-            <a href='https://scintillating-gumption-2d9268.netlify.app/' rel="noreferrer" target="_blank"> Netlify</a>
-          </span>
-          .
-        </p>
+        
       </div >
+
+      <div className="open-source">
+          <p> This project was created by Jessica Neumann and open-sourced on <span>
+            <a href='https://github.com/enigmajess/weather-react' rel="noreferrer" target="_blank">Github </a>
+          </span>
+            and hosted on
+            <span>
+              <a href='https://scintillating-gumption-2d9268.netlify.app/' rel="noreferrer" target="_blank"> Netlify</a>
+            </span>
+            .
+          </p>
+        </div>
 
     </div>
 
