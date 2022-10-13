@@ -28,6 +28,7 @@ export default function WeatherSearch(props) {
 
     function showTemperature(response) {
         setWeather({
+            date:"Wednesday 07:00",
             temperature: response.data.main.temp,
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
@@ -60,7 +61,7 @@ export default function WeatherSearch(props) {
                 <div className="col-6">
                     <h2 className="text-capitalize">{displayCity}</h2>
                     <ul>
-                        <li>Date</li>
+                        <li>{weather.date}</li>
                         <li className="text-capitalize">{weather.description}</li>
                     </ul>
                 </div>
