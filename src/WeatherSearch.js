@@ -10,8 +10,8 @@ export default function WeatherSearch(props) {
 
 
     function handleSubmit(event) {
-        let key = `4f8353f322c9f415161732592106f878`;
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${key}&units=imperial`;
+        const key = `4f8353f322c9f415161732592106f878`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${key}&units=imperial`;
 
         event.preventDefault();
         setDisplay(`${props.city}`)
@@ -58,10 +58,10 @@ export default function WeatherSearch(props) {
             {form}
             <div className="row">
                 <div className="col-6">
-                    <h2>{displayCity}</h2>
+                    <h2 className="text-capitalize">{displayCity}</h2>
                     <ul>
                         <li>Date</li>
-                        <li>{weather.description}</li>
+                        <li className="text-capitalize">{weather.description}</li>
                     </ul>
                 </div>
             </div>
