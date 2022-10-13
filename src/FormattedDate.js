@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function FormattedDate(props) {
   let days = [
@@ -22,5 +22,5 @@ export default function FormattedDate(props) {
     minutes = `0${minutes}`;
   }
 
-  return `${day} ${hours}:${minutes}`;
+  return (`${day} ${hours}:${minutes}`);
 }

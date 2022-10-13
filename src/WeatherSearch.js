@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 
 export default function WeatherSearch(props) {
@@ -58,32 +58,7 @@ export default function WeatherSearch(props) {
     return (
         <div className="weather">
             {form}
-            <div className="row">
-                <div className="col-6">
-                    <h2 className="text-capitalize">{displayCity}</h2>
-                    <ul>
-                        <FormattedDate date= {weather.date} />
-                        <li className="text-capitalize">{weather.description}</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-6">
-                    <img
-                        src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-                        alt={`${weather.description}`}
-                    />
-                    <span>{Math.round(weather.temperature)}°F</span>
-                </div>
-                <div className="col-6">
-                    <ul>
-                        <li>Humidity: {weather.humidity}%</li>
-                        <li>Wind: {weather.wind}mp/h</li>
-                    </ul>
-                </div>
-            </div>
-
-
+           <WeatherInfo data={weather} city={displayCity} />
         </div>
     );
 
