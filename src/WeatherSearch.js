@@ -13,7 +13,7 @@ export default function WeatherSearch(props) {
 
     function handleSubmit(event) {
         const key = `4f8353f322c9f415161732592106f878`;
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${key}&units=imperial`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${key}&units=metric`;
 
         event.preventDefault();
         setDisplay(`${props.city}`)
@@ -29,6 +29,7 @@ export default function WeatherSearch(props) {
     }
 
     function showTemperature(response) {
+        console.log(props.celcius)
         setWeather({
             date: new Date(response.data.dt * 1000),
             temperature: response.data.main.temp,
