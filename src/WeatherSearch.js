@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSearch.css";
+import FormattedDate from "./FormattedDate";
 
 
 export default function WeatherSearch(props) {
@@ -28,7 +29,7 @@ export default function WeatherSearch(props) {
 
     function showTemperature(response) {
         setWeather({
-            date:"Wednesday 07:00",
+            date: new Date(response.data.dt * 1000),
             temperature: response.data.main.temp,
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
@@ -61,7 +62,7 @@ export default function WeatherSearch(props) {
                 <div className="col-6">
                     <h2 className="text-capitalize">{displayCity}</h2>
                     <ul>
-                        <li>{weather.date}</li>
+                        <FormattedDate date= {weather.date} />
                         <li className="text-capitalize">{weather.description}</li>
                     </ul>
                 </div>
