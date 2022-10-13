@@ -4,6 +4,7 @@ import "./WeatherSearch.css";
 import WeatherInfo from "./WeatherInfo";
 
 
+
 export default function WeatherSearch(props) {
 
     let [displayCity, setDisplay] = useState("");
