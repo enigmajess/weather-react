@@ -61,6 +61,7 @@
 
 .weather canvas {
   margin-top: 10px auto;
+  padding-right: 10px;
 }
 
 span.displayedTemperature {
