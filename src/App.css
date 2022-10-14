@@ -53,7 +53,6 @@
 .weather span {
   font-size: 25px;
   font-weight: bolder;
-  margin-top: 30px;
 }
 
 .weather form {
@@ -61,14 +60,20 @@
 }
 
 .weather canvas {
-  height: 64px;
-  width: 64px;
-  margin-top: 10px;
-  display: inline-block;
-  margin-right: 10px;
+  margin-top: 10px auto;
 }
 
-#temp-display {
-  font-size: 60px;
+span.displayedTemperature {
+  font-size: 50px;
 }
 
+.WeatherTemperature {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+span.unit {
+  font-size: 20px;
+  position:relative;
+}
