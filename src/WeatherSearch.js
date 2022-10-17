@@ -13,8 +13,8 @@ export default function WeatherSearch(props) {
 
 
     function handleSubmit(event) {
-        const key = `4f8353f322c9f415161732592106f878`;
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${key}&units=metric`;
+        const key = `tc0acb9ba3a2906ae4oa569caf32bce8`;
+        const url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=metric`;
 
         event.preventDefault();
         setDisplay(`${props.city}`)
@@ -30,14 +30,13 @@ export default function WeatherSearch(props) {
     }
 
     function showTemperature(response) {
-        console.log(props.celcius)
         setWeather({
-            date: new Date(response.data.dt * 1000),
-            temperature: response.data.main.temp,
-            description: response.data.weather[0].description,
-            humidity: response.data.main.humidity,
-            wind: response.data.wind.speed,
-            icon: response.data.weather[0].icon,
+            date: new Date(response.data.daily[0].time * 1000),
+            temperature: response.data.daily[0].temperature.day,
+            description: response.data.daily[0].condition.description,
+            humidity: response.data.daily[0].temperature.humidity,
+            wind: response.data.daily[0].wind.speed,
+            icon: response.data.daily[0].condition.icon,
         });
     }
 
