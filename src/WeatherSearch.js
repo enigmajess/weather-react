@@ -14,7 +14,7 @@ export default function WeatherSearch(props) {
 
     function handleSubmit(event) {
         const key = `tc0acb9ba3a2906ae4oa569caf32bce8`;
-        const url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=metric`;
+        const url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=imperial`;
 
         event.preventDefault();
         setDisplay(`${props.city}`)
@@ -31,6 +31,7 @@ export default function WeatherSearch(props) {
 
     function showTemperature(response) {
         setWeather({
+            
             date: new Date(response.data.daily[0].time * 1000),
             temperature: response.data.daily[0].temperature.day,
             description: response.data.daily[0].condition.description,
@@ -61,7 +62,7 @@ export default function WeatherSearch(props) {
         <div className="weather">
             {form}
            <WeatherInfo data={weather} city={displayCity} />
-           <WeatherForecast />
+           <WeatherForecast city={displayCity}/>
         </div>
     );
 
